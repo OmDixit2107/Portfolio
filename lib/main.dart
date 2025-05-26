@@ -196,8 +196,8 @@ class Portfolio extends StatelessWidget {
     );
   }
 
-  CardTheme _buildCardTheme(Color backgroundColor, Color shadowColor) {
-    return CardTheme(
+  CardThemeData _buildCardTheme(Color backgroundColor, Color shadowColor) {
+    return CardThemeData(
       elevation: 4,
       shadowColor: shadowColor.withOpacity(0.1),
       shape: RoundedRectangleBorder(
