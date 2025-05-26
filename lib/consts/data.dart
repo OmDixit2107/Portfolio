@@ -1,8 +1,11 @@
 import 'package:awesome_portfolio/models/app_model.dart';
 import 'package:awesome_portfolio/models/color_model.dart';
 import 'package:awesome_portfolio/models/device_model.dart';
+import 'package:awesome_portfolio/models/project_model.dart';
 import 'package:awesome_portfolio/screen/miniProjects/education/education.dart';
 import 'package:awesome_portfolio/screen/miniProjects/experience/experience.dart';
+import 'package:awesome_portfolio/screen/miniProjects/projects/projects_screen.dart';
+import 'package:awesome_portfolio/screen/miniProjects/resume/resume_screen.dart';
 import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -119,244 +122,276 @@ List<AppModel> apps = [
   AppModel(
     title: "About",
     color: Colors.white,
-    assetPath: "assets/icons/about.svg",
+    assetPath: "assets/icons/about.png",
     screen: const AboutMe(),
   ),
   AppModel(
     title: "Skills",
     color: Colors.white,
-    assetPath: "assets/icons/skills.svg",
+    icon: Icons.psychology,
+    assetPath: null,
     screen: const Skills(),
   ),
   // AppModel(
-  //   title: "Youtube",
-  //   assetPath: "assets/icons/youtube.svg",
+  //   title: "Resume",
   //   color: Colors.white,
-  //   link: youtubeChannel,
+  //   icon: Icons.description,
+  //   assetPath: null,
+  //   screen: const ResumeScreen(),
   // ),
   AppModel(
-    title: "LinkedIn",
-    assetPath: "assets/icons/linkedin.svg",
+    title: "Projects",
     color: Colors.white,
+    icon: Icons.construction,
+    assetPath: null,
+    screen: const ProjectsScreen(),
+  ),
+  AppModel(
+    title: "LinkedIn",
+    color: Colors.white,
+    assetPath: "assets/icons/LinkedIn.png",
     link: linkedIn,
   ),
   AppModel(
     title: "X",
-    assetPath: "assets/icons/twitter.svg",
     color: Colors.white,
+    assetPath: "assets/icons/x.png",
     link: twitter,
   ),
-  // AppModel(
-  //   title: "Topmate",
-  //   assetPath: "assets/icons/topMate.png",
-  //   color: Colors.white,
-  //   link: topMate,
-  // ),
   AppModel(
-      title: "Experience",
-      color: Colors.white,
-      assetPath: "assets/icons/experience.svg",
-      screen: const Experience()),
+    title: "Experience",
+    color: Colors.white,
+    icon: Icons.work_history,
+    assetPath: null,
+    screen: const Experience(),
+  ),
   AppModel(
     title: "Education",
     color: Colors.white,
-    assetPath: "assets/icons/education.svg",
+    icon: Icons.school,
+    assetPath: null,
     screen: const Education(),
   ),
   AppModel(
     title: "Github",
-    assetPath: "assets/icons/github.svg",
     color: Colors.white,
+    assetPath: "assets/icons/GitHub.png",
     link: github,
   ),
-  // AppModel(
-  //   title: "Play Store",
-  //   assetPath: "assets/icons/playstore.svg",
-  //   color: Colors.white,
-  //   link: playApps,
-  // ),
   AppModel(
     title: "CP Profile",
     color: Colors.white,
-    assetPath: "assets/icons/cp_profile.svg",
+    icon: null,
+    assetPath: "assets/icons/codeforces.png",
     screen: const CpProfileScreen(),
   ),
   // AppModel(
-  //   title: "Codeforces",
-  //   assetPath: "assets/icons/codeforces.svg",
+  //   title: "Education",
   //   color: Colors.white,
-  //   link: codeforcesLink,
+  //   assetPath: "assets/icons/education.svg",
+  //   screen: const Education(),
   // ),
   // AppModel(
-  //   title: "LeetCode",
-  //   assetPath: "assets/icons/leetcode.svg",
+  //   title: "Github",
+  //   assetPath: "assets/icons/github.svg",
   //   color: Colors.white,
-  //   link: leetcodeLink,
+  //   link: github,
+  // ),
+  // AppModel(
+  //   title: "CP Profile",
+  //   color: Colors.white,
+  //   assetPath: "assets/icons/cp_profile.svg",
+  //   screen: const CpProfileScreen(),
+  // ),
+];
+
+// New list for projects
+List<ProjectModel> projects = [
+  ProjectModel(
+    title: "HomeSphere",
+    description:
+        "A full-stack real estate platform with Spring Boot backend and Flutter frontend, implementing RESTful APIs for property management and authentication.",
+    technologies: [
+      "Flutter",
+      "Dart",
+      "Provider",
+      "Java",
+      "Spring Boot",
+      "WebSocket",
+      "MySQL",
+      "RESTful APIs"
+    ],
+    bulletPoints: [
+      "Architected a full-stack real estate platform with Spring Boot backend and Flutter frontend, implementing RESTful APIs for property management and authentication.",
+      "Developed real-time chat functionality using WebSocket (STOMP protocol).",
+      "Created a robust image upload system using multipart form data handling.",
+      "Integrated Provider state management for real-time UI updates and improved consistency."
+    ],
+    videoAssetPath: null,
+    frontendGithubLink: "https://github.com/OmDixit2107/HomeSphere_Frontend",
+    backendGithubLink: "https://github.com/OmDixit2107/HomeSphere_Backend",
+  ),
+  ProjectModel(
+    title: "Flinder",
+    description:
+        "A modern Flutter application with real-time messaging capabilities and advanced state management.",
+    technologies: [
+      "Flutter",
+      "Supabase",
+      "Realtime Messaging",
+      "Provider",
+      "Dart"
+    ],
+    bulletPoints: [
+      "Developed real-time chat functionality using Supabase realtime features.",
+      "Implemented user authentication and profile management system.",
+      "Created responsive UI with modern design patterns and smooth animations.",
+      "Integrated Provider state management for efficient data flow and state handling."
+    ],
+    videoAssetPath: null,
+    githubLink: "https://github.com/OmDixit2107/Flinder",
+  ),
+  // ProjectModel(
+  //   title: "Quiz App",
+  //   description:
+  //       "Integrated Supabase Realtime for dynamic updates and Express.js as a messaging mediator.",
+  //   technologies: ["Flutter", "Express.js", "Android Studio", "Jira"],
+  //   bulletPoints: [
+  //     "Designed group formation logic, enhancing compatibility-based decision-making.",
+  //     "Integrated Supabase Realtime for dynamic updates and Express.js as a messaging mediator.",
+  //     "Designed group formation logic, enhancing compatibility-based decision-making."
+  //   ],
+  //   videoAssetPath: null,
+  // ),
+  // ProjectModel(
+  //   title: "Weather App",
+  //   description:
+  //       "Integrated Provider state management for real-time UI updates and improved consistency.",
+  //   technologies: [
+  //     "Flutter",
+  //     "Dart",
+  //     "Provider",
+  //     "Java",
+  //     "Spring Boot",
+  //     "WebSocket",
+  //     "MySQL"
+  //   ],
+  //   bulletPoints: [
+  //     "Integrated Provider state management for real-time UI updates and improved consistency.",
+  //     "Developed real-time chat functionality using WebSocket (STOMP protocol).",
+  //     "Created a robust image upload system using multipart form data handling."
+  //   ],
+  //   videoAssetPath: null,
   // ),
 ];
 
 final List<JobExperience> education = [
   JobExperience(
-    color: Colors.red,
-    location: "Patiala, India",
-    title: 'Computer Engineering',
-    company: 'Thapar Institure of Engineering',
-    startDate: 'June 2021',
-    endDate: 'Present',
+    color: const Color(0xFF64FFDA),
+    location: "Gandhinagar, Gujarat, India",
+    title: 'Bachelor of Technology in Computer Science And Engineering',
+    company: 'Indian Institute Of Information Technology Vadodara',
+    startDate: 'August 2023',
+    endDate: 'June 2027',
     bulletPoints: [
-      "Currently in the final year of my college!",
-    ],
-  ),
-  JobExperience(
-    color: Colors.blue,
-    location: "Patiala, India",
-    title: 'Diploma in Computer Science',
-    company: 'Thapar Polytechnic College',
-    startDate: 'June 2018',
-    endDate: 'June 2021',
-    bulletPoints: [
-      'Some of the best years of college life',
+      "CGPA: 9.34 - Pursuing Bachelor's degree in Computer Science and Engineering",
+      "Focusing on advanced algorithms, data structures, and software engineering principles",
+      "Active participant in competitive programming contests and technical societies",
+      "Engaged in cutting-edge research projects and collaborative learning initiatives",
     ],
   ),
 ];
 
 final List<JobExperience> jobExperiences = [
   JobExperience(
-    color: Colors.blue,
-    location: "Banglore, India",
-    title: 'Full Stack Developer',
-    company: 'Stimuler',
-    startDate: 'Feb 2023',
+    color: const Color(0xFF64FFDA),
+    location: "Remote",
+    title: 'Mobile Developer Intern',
+    company: 'FullFocus',
+    startDate: 'April 2025',
     endDate: 'Present',
     bulletPoints: [
-      "Actively develop and manage push notifications to engage users effectively.",
-      "Successfully set up in-app purchase functionality for both iOS and Android platforms.",
-      "Utilize the Provider package for streamlined state management and implement real-time data streams.",
-      "Employ Amplitude and Firebase Analytics to track and analyze user behavior, informing data-driven decisions.",
-      "The Startup has over 3,00,000 lakh active users",
-    ],
-  ),
-  // Add more job experiences here...
-  JobExperience(
-    color: Colors.redAccent,
-    location: "Remote",
-    title: 'Flutter Developer',
-    company: 'Perpetuum India',
-    startDate: 'Oct 2022',
-    endDate: 'Jan 2023',
-    bulletPoints: [
-      "Establish voice calling functionality using Agora SDK to enable real-time communication within the app.",
-      "Implement intricate animations using Rive, enhancing the app's visual appeal and engagement.",
-      "Collaborate directly with Stanza Living's CTO, gaining insights into industry best practices and cutting-edge technologies.",
-      "Acquire proficiency in server-driven UI setup, optimizing app flexibility and scalability through dynamic configuration.",
+      "Developed and integrated complete mobile and backend system, implementing backend logic in PHP and Laravel",
+      "Designed and implemented easy application screens including Terms and Conditions, Privacy Policy and other static content pages using Figma wireframes",
+      "Collaborated in testing, identifying and fixing UI/UX bugs to enhance app stability and performance across devices",
+      "Implemented real-time data synchronization using Supabase, enhancing cross-device consistency and improving app performance by reducing loading times and user experience by 30%",
     ],
   ),
   JobExperience(
-    color: Colors.orangeAccent,
+    color: const Color(0xFF82B1FF),
     location: "Remote",
-    title: 'App Architecture Intern',
-    company: 'Habeato',
-    startDate: 'Oct 2021',
-    endDate: 'Nov 2021',
+    title: 'Flutter Developer Intern',
+    company: 'Kenesis',
+    startDate: 'February 2025',
+    endDate: 'March 2025',
     bulletPoints: [
-      "Collaborated with founders to develop a HealthifyMe clone, demonstrating strong teamwork and app development skills.",
-      "Engineered complex animations to enhance user experience and app visual appeal.",
-      "Played an active role in system design processes, contributing to efficient and scalable app architecture.",
-    ],
-  ),
-  JobExperience(
-    color: Colors.greenAccent,
-    location: "Remote",
-    title: 'App Developer',
-    company: 'Kylo Apps',
-    startDate: 'Sep 2021',
-    endDate: 'Oct 2021',
-    bulletPoints: [
-      "Collaborated as a team member in developing a cryptocurrency wallet, akin to Trust Wallet, showcasing strong teamwork and blockchain app development expertise.",
-      "Proficiently integrated REST APIs into the application, enhancing its functionality and connectivity with external services."
-    ],
-  ),
-  JobExperience(
-    color: Colors.black,
-    location: "Remote",
-    title: 'Flutter App Intern',
-    company: 'Cogent Web Services',
-    startDate: 'Dec 2020',
-    endDate: 'June 2021',
-    bulletPoints: [
-      "Independently developed a Life Simulator game using Flutter from scratch, applying state-of-the-art state management practices to ensure a top-tier user experience.",
-      "Leveraged Flutter's robust features to craft an immersive and captivating gameplay experience, demonstrating proficiency in app development.",
-      "Successfully implemented Google Ads, in-app purchases, and Hive database for efficient user data storage and monetization strategies.",
-      "Generated creative ideas for client pitches, fostering creativity and ensuring the game's entertainment value and thought-provoking nature.",
-      "Published the game on the Play Store, achieving over 5,000 downloads, showcasing the ability to deliver a popular and engaging mobile application.",
+      "Built and optimized calendar-based features with event creation, reminders, and recurring events using Flutter, Bloc for state management, and designed architecture with Figma for enhanced user engagement, resulting in a 25% improvement in task completion rate",
+      "Implemented real-time data synchronization using Supabase, enhancing cross-device consistency",
+      "Improved app performance by reducing loading times and enhancing user experience by 30%",
     ],
   ),
 ];
 
-const String youtubeChannel = "https://www.youtube.com/@omdixit";
-const String linkedIn = "https://www.linkedin.com/in/om-dixit/";
+const String linkedIn = "https://www.linkedin.com/in/om-dixit-8b08a6280/";
 const String github = "https://github.com/omdixit2107";
 const String twitter = "https://twitter.com/omdixit2107";
-const String topMate = "https://topmate.io/omdixit";
-const String resumeLink = "https://drive.google.com/file/d/your-resume-id/view";
-const String email = "omdixit@gmail.com";
-const String codeforcesLink = "https://codeforces.com/profile/om_dixit";
-const String leetcodeLink = "https://leetcode.com/omdixit";
+const String resumeLink =
+    "https://drive.google.com/file/d/1FiLnmJJ2FJu9jgBYdHquqA86yfg7hnWK/view?usp=sharing";
+const String email = "omdixit2107@gmail.com";
+const String codeforcesLink = "https://codeforces.com/profile/omdixit2107";
+const String leetcodeLink = "https://leetcode.com/omdixit2107";
 String introduction =
     "Hello! I'm Om Dixit, a passionate Competitive Programmer and Full Stack Developer with expertise in data structures, algorithms, and modern web technologies.\n\nI love solving complex problems and have participated in numerous coding contests. When I'm not coding competitive programming problems, I enjoy building innovative web applications and contributing to open-source projects.\n\nMy goal is to combine my problem-solving skills from competitive programming with practical software development to create efficient and scalable solutions.";
 const String playApps =
     "https://play.google.com/store/apps/developer?id=AppyMonk";
-// const String codeforcesLink = "YOUR_CODEFORCES_PROFILE_URL";
-// const String leetcodeLink = "YOUR_LEETCODE_PROFILE_URL";
 
 List<SkillsModel> skills = [
-  SkillsModel(skillName: "C++", colorS: Colors.blue, iconPath: "random"),
-  SkillsModel(skillName: "Python", colorS: Colors.green),
-  SkillsModel(skillName: "Java", colorS: Colors.orange),
-  SkillsModel(skillName: "Data Structures", colorS: Colors.purple),
-  SkillsModel(skillName: "Algorithms", colorS: Colors.red),
-  SkillsModel(skillName: "Problem Solving", colorS: Colors.teal),
-  SkillsModel(skillName: "Dynamic Programming", colorS: Colors.indigo),
-  SkillsModel(skillName: "Graph Theory", colorS: Colors.cyan),
-  SkillsModel(skillName: "Flutter", colorS: Colors.blue),
-  SkillsModel(skillName: "React", colorS: Colors.lightBlue),
-  SkillsModel(skillName: "Node.js", colorS: Colors.green),
-  SkillsModel(skillName: "MongoDB", colorS: Colors.green),
-  SkillsModel(skillName: "Firebase", colorS: Colors.yellow),
-  SkillsModel(skillName: "Git", colorS: Colors.black),
-  SkillsModel(skillName: "Docker", colorS: Colors.blue),
+  // Programming Languages
   SkillsModel(
-    skillName: "Dart",
-    colorS: Colors.blue,
-  ),
+      skillName: "C++", colorS: const Color(0xFF00599C), iconPath: "random"),
+  SkillsModel(skillName: "Python", colorS: const Color(0xFF3776AB)),
+  SkillsModel(skillName: "Java", colorS: const Color(0xFFED8B00)),
+  SkillsModel(skillName: "Dart", colorS: const Color(0xFF0175C2)),
+  SkillsModel(skillName: "SQL", colorS: const Color(0xFF336791)),
+
+  // Mobile Development
+  SkillsModel(skillName: "Flutter", colorS: const Color(0xFF02569B)),
+  SkillsModel(skillName: "Android Studio", colorS: const Color(0xFF3DDC84)),
+  SkillsModel(skillName: "Jira", colorS: const Color(0xFF0052CC)),
+
+  // Web Development and Frameworks
+  SkillsModel(skillName: "Spring Boot", colorS: const Color(0xFF6DB33F)),
+  SkillsModel(skillName: "Spring Security", colorS: const Color(0xFF6DB33F)),
+  SkillsModel(skillName: "Spring JPA", colorS: const Color(0xFF6DB33F)),
+  SkillsModel(skillName: "Hibernate", colorS: const Color(0xFF59666C)),
+  // SkillsModel(skillName: "Express.js", colorS: const Color(0xFF000000)),
+
+  // Databases
+  SkillsModel(skillName: "MySQL", colorS: const Color(0xFF4479A1)),
+  SkillsModel(skillName: "Supabase", colorS: const Color(0xFF3ECF8E)),
+  SkillsModel(skillName: "Firebase", colorS: const Color(0xFFFFCA28)),
+
+  // Tools and Technologies
+  SkillsModel(skillName: "Git", colorS: const Color(0xFFF05032)),
+  SkillsModel(skillName: "GitHub", colorS: const Color(0xFF181717)),
+  SkillsModel(skillName: "WebSocket", colorS: const Color(0xFF010101)),
+  SkillsModel(skillName: "RESTful APIs", colorS: const Color(0xFF25D366)),
+
+  // Competitive Programming
+  SkillsModel(skillName: "Data Structures", colorS: const Color(0xFF673AB7)),
+  SkillsModel(skillName: "Algorithms", colorS: const Color(0xFFE91E63)),
+  SkillsModel(skillName: "Problem Solving", colorS: const Color(0xFF009688)),
   SkillsModel(
-    skillName: "Provider",
-    colorS: Colors.orange,
-  ),
-  SkillsModel(
-    skillName: "Riverpod",
-    colorS: Colors.blue,
-  ),
-  SkillsModel(
-    skillName: "CI/CD",
-    colorS: Colors.yellow,
-  ),
-  SkillsModel(
-    skillName: "Code Magic",
-    colorS: Colors.orange,
-  ),
-  SkillsModel(
-    skillName: "Firebase",
-    colorS: Colors.yellow,
-  ),
-  SkillsModel(
-    skillName: "REST API",
-    colorS: Colors.yellow,
-  ),
+      skillName: "Dynamic Programming", colorS: const Color(0xFF3F51B5)),
+  SkillsModel(skillName: "Graph Theory", colorS: const Color(0xFF00BCD4)),
+
+  // State Management
+  SkillsModel(skillName: "Provider", colorS: const Color(0xFFFF9800)),
+  SkillsModel(skillName: "Bloc", colorS: const Color(0xFF2196F3)),
 ];
 
 List<SkillsModel> languages = [
-  SkillsModel(skillName: "Punjabi", colorS: Colors.orange),
+  // SkillsModel(skillName: "Punjabi", colorS: Colors.orange),
   SkillsModel(skillName: "Hindi", colorS: Colors.black),
   SkillsModel(skillName: "English", colorS: Colors.blueGrey),
 ];

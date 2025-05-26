@@ -8,7 +8,7 @@ class CpProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: const Color(0xFF121212),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
         child: Column(
@@ -27,7 +27,7 @@ class CpProfileScreen extends StatelessWidget {
               style: GoogleFonts.inter(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
-                color: Colors.black87,
+                color: Colors.white,
               ),
               textAlign: TextAlign.center,
             ),
@@ -36,10 +36,10 @@ class CpProfileScreen extends StatelessWidget {
             // Platforms Section
             _buildPlatformCard(
               "Codeforces",
-              "Expert Rating: 1600+",
-              "Solved 500+ problems",
+              "Spcecialist Rating: 1540",
+              "Solved 600+ problems",
               Icons.code,
-              Colors.blue,
+              Colors.cyan,
               "https://codeforces.com/profile/omdixit2107",
             ),
             const SizedBox(height: 20),
@@ -47,7 +47,7 @@ class CpProfileScreen extends StatelessWidget {
             _buildPlatformCard(
               "LeetCode",
               "Knight Rating: 1800+",
-              "Solved 300+ problems",
+              "Solved 400+ problems",
               Icons.psychology,
               Colors.orange,
               "https://leetcode.com/omdixit2107",
@@ -70,7 +70,7 @@ class CpProfileScreen extends StatelessWidget {
               style: GoogleFonts.inter(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
-                color: Colors.black87,
+                color: Colors.white,
               ),
             ),
             const SizedBox(height: 15),
@@ -98,7 +98,7 @@ class CpProfileScreen extends StatelessWidget {
               style: GoogleFonts.inter(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
-                color: Colors.black87,
+                color: Colors.white,
               ),
             ),
             const SizedBox(height: 15),
@@ -128,9 +128,9 @@ class CpProfileScreen extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.1),
+        color: const Color(0xFF1E1E1E),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: color.withOpacity(0.3)),
+        border: Border.all(color: color.withOpacity(0.5)),
       ),
       child: Row(
         children: [
@@ -152,7 +152,7 @@ class CpProfileScreen extends StatelessWidget {
                   style: GoogleFonts.inter(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: Colors.black87,
+                    color: Colors.white,
                   ),
                 ),
                 const SizedBox(height: 4),
@@ -160,14 +160,14 @@ class CpProfileScreen extends StatelessWidget {
                   rating,
                   style: GoogleFonts.inter(
                     fontSize: 14,
-                    color: Colors.black54,
+                    color: Colors.white70,
                   ),
                 ),
                 Text(
                   problems,
                   style: GoogleFonts.inter(
                     fontSize: 14,
-                    color: Colors.black54,
+                    color: Colors.white70,
                   ),
                 ),
               ],
@@ -214,7 +214,7 @@ class CpProfileScreen extends StatelessWidget {
               text,
               style: GoogleFonts.inter(
                 fontSize: 14,
-                color: Colors.black87,
+                color: Colors.white,
               ),
             ),
           ),

@@ -22,17 +22,17 @@ class _AboutMeState extends State<AboutMe> {
     const String profilePicPath = "assets/images/your_profile_pic.jpeg";
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: const Color(0xFF121212),
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 5),
           margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
           child: Container(
             decoration: BoxDecoration(
-              color: const Color(0xfff5f4e7),
+              color: const Color(0xFF1E1E1E),
               borderRadius: BorderRadius.circular(15),
             ),
-            padding: const EdgeInsets.all(15),
+            padding: const EdgeInsets.all(20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -41,32 +41,32 @@ class _AboutMeState extends State<AboutMe> {
                 ),
                 Center(
                   child: CircleAvatar(
-                    radius: 50,
+                    radius: 60,
                     backgroundImage: AssetImage(profilePicPath),
-                    backgroundColor: Colors.grey[300],
+                    backgroundColor: Colors.grey[800],
                   ),
                 ),
                 Container(
                   alignment: Alignment.center,
                   padding:
-                      const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+                      const EdgeInsets.symmetric(vertical: 25, horizontal: 20),
                   child: Text(
                     "Hi, I am Om Dixit",
                     textAlign: TextAlign.center,
                     style: GoogleFonts.openSans(
-                        fontSize: 20,
+                        fontSize: 22,
                         fontWeight: FontWeight.bold,
-                        color: Colors.black87),
+                        color: Colors.white),
                   ),
                 ),
                 Text(
                   introduction,
                   textAlign: TextAlign.justify,
                   style: GoogleFonts.openSans(
-                      fontSize: 15,
+                      fontSize: 16,
                       fontWeight: FontWeight.w500,
-                      color: Colors.black.withOpacity(0.75),
-                      height: 1.5),
+                      color: Colors.white.withOpacity(0.85),
+                      height: 1.6),
                 ).animate().fadeIn(duration: const Duration(milliseconds: 500))
               ],
             ),
