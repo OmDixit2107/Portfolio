@@ -107,7 +107,7 @@ class _AboutMeState extends State<AboutMe> {
                       ),
                       const SizedBox(height: 12),
                       Text(
-                        "Passionate Computer Science student at IIT Vadodara with a stellar 9.34 CGPA, specializing in competitive programming and mobile development. Currently serving as a Mobile Developer Intern at FullFocus, where I architect complete mobile and backend systems using Flutter, PHP, and Laravel.\n\nWith expertise in data structures, algorithms, and modern development frameworks, I've solved 1000+ DSA problems and excel in building scalable, real-time applications. My experience spans from developing real estate platforms with WebSocket integration to optimizing calendar-based features that improved task completion rates by 25%.",
+                        "Passionate Computer Science student at IIT Vadodara with a stellar 9.34 CGPA, specializing in competitive programming and mobile development. Currently serving as a Mobile Developer Intern at FadFocus, where I architect complete mobile and backend systems using Flutter, PHP, and Laravel.\n\nWith expertise in data structures, algorithms, and modern development frameworks, I've solved 1000+ DSA problems and excel in building scalable, real-time applications. My experience spans from developing real estate platforms with WebSocket integration to optimizing calendar-based features that improved task completion rates by 25%.",
                         textAlign: TextAlign.justify,
                         style: GoogleFonts.inter(
                           fontSize: 14,
@@ -156,7 +156,7 @@ class _AboutMeState extends State<AboutMe> {
                       _buildHighlightItem(
                           "🎓", "9.34 CGPA at IIT Vadodara (CSE)"),
                       _buildHighlightItem(
-                          "💼", "Mobile Developer Intern at FullFocus"),
+                          "💼", "Mobile Developer Intern at FadFocus"),
                       _buildHighlightItem("🏆", "1000+ DSA Problems Solved"),
                       _buildHighlightItem(
                           "🚀", "Expert in Flutter & Spring Boot"),

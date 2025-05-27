@@ -307,7 +307,7 @@ final List<JobExperience> jobExperiences = [
     color: const Color(0xFF64FFDA),
     location: "Remote",
     title: 'Mobile Developer Intern',
-    company: 'FullFocus',
+    company: 'FadFocus',
     startDate: 'April 2025',
     endDate: 'Present',
     bulletPoints: [
