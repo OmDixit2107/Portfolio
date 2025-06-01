@@ -263,7 +263,7 @@ class _IntroSectionState extends State<IntroSection>
               ),
               const SizedBox(width: 20),
               Expanded(
-                child: _buildEnhancedStat("Proficient", "Flutter & Spring Boot",
+                child: _buildEnhancedStat("Learning", "Flutter & Spring Boot",
                     const Color(0xFF82B1FF)),
               ),
             ],
