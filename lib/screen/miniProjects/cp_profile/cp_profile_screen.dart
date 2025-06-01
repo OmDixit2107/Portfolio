@@ -46,7 +46,7 @@ class CpProfileScreen extends StatelessWidget {
 
             _buildPlatformCard(
               "LeetCode",
-              "Knight Rating: 1800+",
+              "Knight Rating: 1900+",
               "Solved 400+ problems",
               Icons.psychology,
               Colors.orange,

@@ -52,7 +52,7 @@ class _SkillsState extends State<Skills> with TickerProviderStateMixin {
         'icon': Icons.smartphone,
         'skills': skills
             .where((skill) =>
-                ['Flutter', 'Android Studio', 'Jira'].contains(skill.skillName))
+                ['Flutter', 'Android Studio'].contains(skill.skillName))
             .toList(),
         'color': const Color(0xFF82B1FF),
       },
@@ -65,7 +65,6 @@ class _SkillsState extends State<Skills> with TickerProviderStateMixin {
                   'Spring Security',
                   'Spring JPA',
                   'Hibernate',
-                  'Express.js'
                 ].contains(skill.skillName))
             .toList(),
         'color': const Color(0xFF4FC3F7),
@@ -83,8 +82,13 @@ class _SkillsState extends State<Skills> with TickerProviderStateMixin {
         'title': 'Tools & Technologies',
         'icon': Icons.build,
         'skills': skills
-            .where((skill) => ['Git', 'GitHub', 'WebSocket', 'RESTful APIs']
-                .contains(skill.skillName))
+            .where((skill) => [
+                  'Git',
+                  'GitHub',
+                  'WebSocket',
+                  'RESTful APIs',
+                  'Jira'
+                ].contains(skill.skillName))
             .toList(),
         'color': const Color(0xFFFFB74D),
       },

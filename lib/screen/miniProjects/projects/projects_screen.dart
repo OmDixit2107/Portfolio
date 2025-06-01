@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:awesome_portfolio/models/project_model.dart';
-import 'package:awesome_portfolio/consts/data.dart'; // To access the projects list
+import 'package:om_dixit_portfolio/models/project_model.dart';
+import 'package:om_dixit_portfolio/consts/data.dart'; // To access the projects list
 import 'package:url_launcher/url_launcher.dart';
 // import 'package:video_player/video_player.dart'; // Will be used later for video playback
 

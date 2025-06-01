@@ -1,11 +1,11 @@
-import 'package:awesome_portfolio/models/app_model.dart';
-import 'package:awesome_portfolio/models/color_model.dart';
-import 'package:awesome_portfolio/models/device_model.dart';
-import 'package:awesome_portfolio/models/project_model.dart';
-import 'package:awesome_portfolio/screen/miniProjects/education/education.dart';
-import 'package:awesome_portfolio/screen/miniProjects/experience/experience.dart';
-import 'package:awesome_portfolio/screen/miniProjects/projects/projects_screen.dart';
-import 'package:awesome_portfolio/screen/miniProjects/resume/resume_screen.dart';
+import 'package:om_dixit_portfolio/models/app_model.dart';
+import 'package:om_dixit_portfolio/models/color_model.dart';
+import 'package:om_dixit_portfolio/models/device_model.dart';
+import 'package:om_dixit_portfolio/models/project_model.dart';
+import 'package:om_dixit_portfolio/screen/miniProjects/education/education.dart';
+import 'package:om_dixit_portfolio/screen/miniProjects/experience/experience.dart';
+import 'package:om_dixit_portfolio/screen/miniProjects/projects/projects_screen.dart';
+import 'package:om_dixit_portfolio/screen/miniProjects/resume/resume_screen.dart';
 import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -292,12 +292,13 @@ final List<JobExperience> education = [
     title: 'Bachelor of Technology in Computer Science And Engineering',
     company: 'Indian Institute Of Information Technology Vadodara',
     startDate: 'August 2023',
-    endDate: 'June 2027',
+    endDate: 'May 2027',
     bulletPoints: [
       "CGPA: 9.34 - Pursuing Bachelor's degree in Computer Science and Engineering",
       "Focusing on advanced algorithms, data structures, and software engineering principles",
       "Active participant in competitive programming contests and technical societies",
-      "Engaged in cutting-edge research projects and collaborative learning initiatives",
+      "Joint Secretary at IIITV Coding Club",
+      // "Engaged in cutting-edge research projects and collaborative learning initiatives",
     ],
   ),
 ];

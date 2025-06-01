@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:awesome_portfolio/consts/data.dart';
+import 'package:om_dixit_portfolio/consts/data.dart';
 import 'dart:math';
 
 class IntroSection extends StatefulWidget {
@@ -257,11 +257,15 @@ class _IntroSectionState extends State<IntroSection>
           // Enhanced stats with glow effect
           Row(
             children: [
-              _buildEnhancedStat(
-                  "1000+", "DSA Problems Solved", const Color(0xFF64FFDA)),
-              const SizedBox(width: 30),
-              _buildEnhancedStat("Proficient", "Flutter & Spring Boot",
-                  const Color(0xFF82B1FF)),
+              Expanded(
+                child: _buildEnhancedStat(
+                    "1000+", "DSA Problems Solved", const Color(0xFF64FFDA)),
+              ),
+              const SizedBox(width: 20),
+              Expanded(
+                child: _buildEnhancedStat("Proficient", "Flutter & Spring Boot",
+                    const Color(0xFF82B1FF)),
+              ),
             ],
           ).animate(delay: 1000.ms).slideY(begin: 1, duration: 800.ms).fadeIn(),
 
@@ -270,21 +274,25 @@ class _IntroSectionState extends State<IntroSection>
           // Enhanced CTA Buttons
           Row(
             children: [
-              _buildEnhancedButton(
-                "View Resume",
-                Colors.white,
-                Colors.black,
-                _launchResumeUrl,
-                icon: Icons.description,
+              Expanded(
+                child: _buildEnhancedButton(
+                  "View Resume",
+                  Colors.white,
+                  Colors.black,
+                  _launchResumeUrl,
+                  icon: Icons.description,
+                ),
               ),
               const SizedBox(width: 15),
-              _buildEnhancedButton(
-                "Contact Me",
-                Colors.transparent,
-                Colors.white,
-                _launchEmail,
-                border: true,
-                icon: Icons.email,
+              Expanded(
+                child: _buildEnhancedButton(
+                  "Contact Me",
+                  Colors.transparent,
+                  Colors.white,
+                  _launchEmail,
+                  border: true,
+                  icon: Icons.email,
+                ),
               ),
             ],
           ).animate(delay: 1200.ms).slideY(begin: 1, duration: 800.ms).fadeIn(),
@@ -312,7 +320,8 @@ class _IntroSectionState extends State<IntroSection>
               fontWeight: FontWeight.bold,
             ),
             maxFontSize: 24,
-            minFontSize: 18,
+            minFontSize: 16,
+            maxLines: 1,
           ),
           AutoSizeText(
             label,
@@ -322,7 +331,8 @@ class _IntroSectionState extends State<IntroSection>
               fontWeight: FontWeight.w400,
             ),
             maxFontSize: 12,
-            minFontSize: 10,
+            minFontSize: 8,
+            maxLines: 2,
           ),
         ],
       ),

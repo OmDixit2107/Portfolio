@@ -1,6 +1,6 @@
-import 'package:awesome_portfolio/consts/data.dart';
-import 'package:awesome_portfolio/providers/current_state.dart';
-import 'package:awesome_portfolio/providers/theme_provider.dart';
+import 'package:om_dixit_portfolio/consts/data.dart';
+import 'package:om_dixit_portfolio/providers/current_state.dart';
+import 'package:om_dixit_portfolio/providers/theme_provider.dart';
 import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -12,6 +12,7 @@ import '../../widgets/lightning_animation.dart';
 import '../../widgets/intro_section.dart';
 import '../../widgets/top_clouds.dart';
 import '../../widgets/enhanced_background.dart';
+import '../../widgets/made_with_love_footer.dart';
 import 'phone_screen_wrapper.dart';
 
 class HomePage extends StatelessWidget {
@@ -50,6 +51,8 @@ class HomePage extends StatelessWidget {
           const CloudRainEffect(),
           const MouseFollowerEffect(),
           const ColorPaletteSelector(),
+          // Made with love footer
+          const MadeWithLoveFooter(),
           Row(
             children: [
               if (!phone)

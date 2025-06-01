@@ -1,4 +1,4 @@
-import 'package:awesome_portfolio/screen/homescreen/phone_home_page.dart';
+import 'package:om_dixit_portfolio/screen/homescreen/phone_home_page.dart';
 // import 'package:device_frame/device_frame.dart'; // No longer directly used here for DeviceInfo properties
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

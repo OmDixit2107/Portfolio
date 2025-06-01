@@ -1,4 +1,4 @@
-import 'package:awesome_portfolio/consts/data.dart';
+import 'package:om_dixit_portfolio/consts/data.dart';
 import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';

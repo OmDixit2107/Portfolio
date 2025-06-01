@@ -1,4 +1,4 @@
-import 'package:awesome_portfolio/consts/data.dart';
+import 'package:om_dixit_portfolio/consts/data.dart';
 import 'package:flutter/material.dart';
 
 class ThemeProvider extends ChangeNotifier {
