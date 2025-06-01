@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:om_dixit_portfolio/consts/data.dart';
 import 'dart:math';
+import 'package:flutter/rendering.dart';
 
 class IntroSection extends StatefulWidget {
   const IntroSection({Key? key}) : super(key: key);
@@ -78,12 +80,119 @@ class _IntroSectionState extends State<IntroSection>
   }
 
   Future<void> _launchEmail() async {
-    final Uri emailLaunchUri = Uri(
-        scheme: 'mailto',
-        path: email,
-        queryParameters: {'subject': 'Portfolio Contact'});
-    if (!await launchUrl(emailLaunchUri)) {
-      throw 'Could not launch $emailLaunchUri';
+    try {
+      // First try with mailto scheme
+      final Uri emailLaunchUri =
+          Uri(scheme: 'mailto', path: email, queryParameters: {
+        'subject': 'Portfolio Contact - Hi Om!',
+        'body':
+            'Hi Om,\n\nI came across your portfolio and would like to get in touch.\n\nBest regards,'
+      });
+
+      print('Attempting to launch email: $emailLaunchUri');
+
+      if (await canLaunchUrl(emailLaunchUri)) {
+        await launchUrl(emailLaunchUri, mode: LaunchMode.externalApplication);
+        print('Email launched successfully');
+      } else {
+        print('Cannot launch mailto, trying alternative methods...');
+        await _launchEmailAlternative();
+      }
+    } catch (e) {
+      print('Error launching email: $e');
+      await _launchEmailAlternative();
+    }
+  }
+
+  Future<void> _launchEmailAlternative() async {
+    try {
+      // Try launching Gmail web interface
+      final Uri gmailWebUri = Uri.parse(
+          'https://mail.google.com/mail/?view=cm&fs=1&to=$email&su=Portfolio Contact - Hi Om!&body=Hi Om,%0D%0A%0D%0AI came across your portfolio and would like to get in touch.%0D%0A%0D%0ABest regards,');
+
+      print('Attempting Gmail web interface: $gmailWebUri');
+
+      if (await canLaunchUrl(gmailWebUri)) {
+        await launchUrl(gmailWebUri, mode: LaunchMode.externalApplication);
+        print('Gmail web launched successfully');
+      } else {
+        // Final fallback - copy email to clipboard and show snackbar
+        await _copyEmailToClipboard();
+      }
+    } catch (e) {
+      print('Error with Gmail web interface: $e');
+      await _copyEmailToClipboard();
+    }
+  }
+
+  Future<void> _copyEmailToClipboard() async {
+    try {
+      // Copy email to clipboard as final fallback
+      await Clipboard.setData(ClipboardData(text: email));
+
+      final scaffoldMessenger = ScaffoldMessenger.of(context);
+      scaffoldMessenger.showSnackBar(
+        SnackBar(
+          content: Row(
+            children: [
+              Icon(Icons.check_circle, color: Colors.white, size: 20),
+              const SizedBox(width: 8),
+              Expanded(
+                child: Text(
+                  'Email copied to clipboard: $email',
+                  style: GoogleFonts.inter(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          backgroundColor: const Color(0xFF64FFDA),
+          behavior: SnackBarBehavior.floating,
+          margin: const EdgeInsets.all(16),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+          duration: const Duration(seconds: 3),
+          action: SnackBarAction(
+            label: 'OK',
+            textColor: Colors.black,
+            onPressed: () {},
+          ),
+        ),
+      );
+      print('Email copied to clipboard: $email');
+    } catch (e) {
+      print('Error copying email to clipboard: $e');
+      // Show error message if copying fails
+      final scaffoldMessenger = ScaffoldMessenger.of(context);
+      scaffoldMessenger.showSnackBar(
+        SnackBar(
+          content: Row(
+            children: [
+              Icon(Icons.error, color: Colors.white, size: 20),
+              const SizedBox(width: 8),
+              Expanded(
+                child: Text(
+                  'Contact: $email',
+                  style: GoogleFonts.inter(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          backgroundColor: Colors.orange,
+          behavior: SnackBarBehavior.floating,
+          margin: const EdgeInsets.all(16),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+          duration: const Duration(seconds: 4),
+        ),
+      );
     }
   }
 
@@ -271,30 +380,15 @@ class _IntroSectionState extends State<IntroSection>
 
           const SizedBox(height: 30),
 
-          // Enhanced CTA Buttons
-          Row(
-            children: [
-              Expanded(
-                child: _buildEnhancedButton(
-                  "View Resume",
-                  Colors.white,
-                  Colors.black,
-                  _launchResumeUrl,
-                  icon: Icons.description,
-                ),
-              ),
-              const SizedBox(width: 15),
-              Expanded(
-                child: _buildEnhancedButton(
-                  "Contact Me",
-                  Colors.transparent,
-                  Colors.white,
-                  _launchEmail,
-                  border: true,
-                  icon: Icons.email,
-                ),
-              ),
-            ],
+          // Enhanced CTA Button
+          Center(
+            child: _buildEnhancedButton(
+              "View Resume",
+              Colors.white,
+              Colors.black,
+              _launchResumeUrl,
+              icon: Icons.description,
+            ),
           ).animate(delay: 1200.ms).slideY(begin: 1, duration: 800.ms).fadeIn(),
         ],
       ),
